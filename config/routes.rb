@@ -1,4 +1,16 @@
 TestProject::Application.routes.draw do
+
+  resources :users
+
+# match '/show',  to: 'users#show',            via: 'get'
+# match '/signup',  to: 'users#new',            via: 'get'
+  # get "users/show"
+  # get "users/new"
+  get "pages/start"
+  get "pages/signin"
+
+  # match '/help',    to: 'static_pages#help',    via: 'get'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
