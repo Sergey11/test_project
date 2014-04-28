@@ -2,12 +2,13 @@ TestProject::Application.routes.draw do
 
   resources :users
 
-# match '/show',  to: 'users#show',            via: 'get'
-# match '/signup',  to: 'users#new',            via: 'get'
+match '/show',  to: 'users#show',            via: 'get'
+match '/signup',  to: 'users#new',            via: 'get'
   # get "users/show"
   # get "users/new"
-  get "pages/start"
-  get "pages/signin"
+  match '/signin',  to: 'pages#signin',            via: 'get'
+  match '/start',  to: 'pages#start',            via: 'get'
+  
 
   # match '/help',    to: 'static_pages#help',    via: 'get'
   

@@ -10,11 +10,19 @@ class UsersController < ApplicationController
 
   def index
 
-    @user = User.find_by_name(params[:name])
-
-    # self.current_user = @user
-    # redirect_to current_user
-    
+    @user = User.find_by(name: params[:name], email: params[:email])
+    session[:size] = params[:size]
+    session[:color] = params[:color]
+    @size = session[:size] 
+    @color= session[:color] 
+    if @user.nil?
+       flash.now[:error] = "Invalid email/password combination" 
+        render 'pages/signin'
+      else
+        
+        render 'index'
+      
+    end
   end
 
 

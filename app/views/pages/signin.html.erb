@@ -1,8 +1,20 @@
 <% provide(:title, 'About Us') %>
 
+<h2><div class="alert alert-danger"><%= flash[:error] %></div></h2>
+
 <form method="get" action="/users">
 
-        <p><input type="text" name="name" value="" placeholder="Username "></p>
-        <!-- <p><input type="password" name="password" value="" placeholder="Password"></p> -->
+        <p><input type="text" name="name" value="" placeholder="Name "></p>
+        <p><input type="text" name="email" value="" placeholder="Email "></p>
+
+        <p><input type="text" name="color" value="" placeholder="Color"></p>
+
+        <p></p><select name="size">
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option selected value="XL">XL</option>
+          <option value="XXL">XXL</option>
+        </select></p>
         
       <input type="submit" name="commit" >
